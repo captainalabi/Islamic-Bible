@@ -1,0 +1,26 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Islamic Bible Home</title>
+		<link href="https://cdn.datatables.net/v/bs4/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+ 		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/
+		css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			
+			<center><h1>Welcome To Islamic Bible Home</h1></center>
+			
+			
+			<h1><a th:href="@{/show-create-islamicBibleForm}">Create New Entry</a></h1>
+			<h1><a th:href="@{/listAllIslamicBible}">All Entries</a></h1>
+			<h1><a th:href="@{/showBookForm}">Save New Bible Book</a></h1>
+			<h1><a th:href="@{/listBooks}">All Bible Books</a></h1>
+			<h1><a th:href="@{/showVersionForm}">Create New Bible Version</a></h1>
+			<h1><a th:href="@{/listVersions}">All Bible Versions</a></h1>
+			
+		</div>			
+	</body>
+</html>

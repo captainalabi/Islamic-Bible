@@ -1,0 +1,111 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>All Islamic Bible</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/
+		css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+		
+		<!--<link rel="stylesheet" type="text/css" href="styles.css" />-->
+	</head>
+	<body>
+		<div class="container">
+			
+			<h1><a th:href="@{/}">Home</a></h1>
+			<h2>Comparative Religion Studies With Bible And Quran For ACADIP</h2>
+			
+			<div th:switch="${testVar}">
+			<i th:case="myVar">
+				
+			<table border="1" class="table table-bordered table-striped">
+				<thead>
+					<tr>
+					<th>Topic of Discussion</th>
+					<th>Bible Book</th>
+					<th>Bible Chapter</th>
+					<th>Bible Verse</th>
+					<th>Bible Version</th>
+					<th>Bible Text</th>
+					<th>Bible Explanation</th>
+					<th>Quranic Chapter</th>
+					<th>Quranic Verse</th>
+					<th>Quranic Text</th>
+					<th>Quranic Verse Explanation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="islamicBible:${listAllIslamicBible}">
+						<td th:text="${islamicBible.topic}"></td>
+						<td th:text="${islamicBible.bibleBook}"></td>
+						<td th:text="${islamicBible.bibleChapter}"></td>
+						<td th:text="${islamicBible.bibleVerse}"></td>
+						<td th:text="${islamicBible.bibleVersion}"></td>
+						<td th:text="${islamicBible.bibleText}"></td>
+						<td th:text="${islamicBible.bibleExplanation}"></td>
+						<td th:text="${islamicBible.quranicChapter}"></td>
+						<td th:text="${islamicBible.quranicVerse}"></td>
+						<td th:text="${islamicBible.quranicText}"></td>
+						<td th:text="${islamicBible.quranicExplanation}"></td>
+						<td>
+						<a th:href="@{/updateIslamicBible(id=${islamicBible.id})}" class="btn btn-info">Update</a>
+						</td>						
+						<td>
+						<a th:href="@{/deleteIslamicBible(id=${islamicBible.id})}" class="btn btn-danger bm-2">Delete</a>
+						</td>
+					</tr>					
+				</tbody>				
+			</table>		
+			
+			</i>
+		
+			<i th:case="*">
+			
+			<div th:each="islamicBible:${listAllIslamicBible}" class="col-md-40 .padding">
+				<div class="col-md-100 offset-md-4 .padding" style="width: 100%; margin:auto;">
+				
+				<center>
+				<h3>
+				<p class="">Topic:
+					<span th:text="${islamicBible.topic}"></span>
+				</p>
+				</h3>
+				</center>
+				<hr>
+				<strong><p>Bible
+				<span th:text="${islamicBible.bibleBook}"><nbsp></span>
+					<span th:text="${islamicBible.bibleChapter} + ':'"></span>
+					<span th:text="${islamicBible.bibleVerse}"></span>
+					<span th:text="${islamicBible.bibleVersion}"></span>
+				</p>
+				</strong>
+				<p>
+					<span th:text="${islamicBible.bibleText}"></span>
+				</p>
+				<strong><p>Explanation</p></strong>
+				<p>
+					<span th:text="${islamicBible.bibleExplanation}"></span>
+				</p>
+				<strong><p>Quran
+					<span th:text="${islamicBible.quranicChapter} + ':'"></span>
+					<span th:text="${islamicBible.quranicVerse}"></span>
+				</p>
+				</strong>
+				<p>
+					<span th:text="${islamicBible.quranicText}"></span>
+				</p>
+				<strong><p>Explanation</p></strong>
+				<p>
+					<span th:text="${islamicBible.quranicExplanation}"></span>
+				</p>
+			</div>
+			
+			
+			
+			</div>
+			</div>
+			</i>
+			</div>
+			
+			
+	</body>
+</html>

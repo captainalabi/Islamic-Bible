@@ -1,0 +1,26 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Create New Bible Versionk</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/
+		css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<h1><a th:href="@{/}">Home</a></h1>
+			<h2>Create New Bible Version</h2>
+			</hr>
+			<form th:action="@{/createVersion}" th:object="${bibleVersion}" method="POST">
+				<input type="text" th:field="${bibleVersion.version}" placeholder="Enter Book Version" class="form-control col-4 mb-4" required/>
+				
+				<button type="submit" class="btn btn-primary">Save Version</button>
+				
+				<input type="hidden" th:field="${bibleVersion.id}"/>
+			</form>
+		
+			</br>
+			
+		</div>
+	</body>
+</html>
