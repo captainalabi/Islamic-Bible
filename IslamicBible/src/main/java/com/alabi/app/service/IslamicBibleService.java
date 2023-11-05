@@ -11,4 +11,5 @@ public interface IslamicBibleService {
 	void updateIslamicBible(IslamicBible islamicBible);
 	void deleteIslamicBibleById(Integer id);
 	IslamicBible searchById(Integer id);
+	List <IslamicBible> findAll(String keyword);
 }

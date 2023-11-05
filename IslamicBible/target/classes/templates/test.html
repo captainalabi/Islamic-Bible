@@ -12,32 +12,16 @@
     padding-bottom: 10%;
   }
   </style>
+  <link rel="stylesheet" type="tex/css" href="styles.css" th:href="@{/styles.css}" />
 </head>
 <body>
+	<!--navigation bar-->
+		<div th:replace="~{navbar :: menunav}"></div>
 
 <div class="p-5 bg-primary text-white text-center">
   <h1>Comparative Religion Studies With Bible And Quran For ACADIP</h1>
   <p>Evidences To Prove that Islam is The Only Way To Salvation</p> 
 </div>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active" th:href="@{/}">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-  </div>
-</nav>
 
 <div class="container mt-5">
 	

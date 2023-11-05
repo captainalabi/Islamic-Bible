@@ -6,7 +6,9 @@
 		css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
 		crossorigin="anonymous">
 	</head>
-	<brbod>
+	<body>
+		<!--navigation bar-->
+		<div th:replace="~{navbar :: menunav}"></div>
 		<div class="container">
 			
 			<h1><a th:href="@{/showBookForm}">Create New Bible Book</a></h1>

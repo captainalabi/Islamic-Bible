@@ -49,4 +49,12 @@ public class IslamicBibleServiceImpl implements IslamicBibleService{
 		return islamicBibleRepository.findById(id).get();
 	}
 
+	@Override
+	public List <IslamicBible> findAll(String keyword) {
+		if(keyword != null) {
+			return islamicBibleRepository.findAll(keyword);
+		}
+		return islamicBibleRepository.findAll();
+	}
+
 }

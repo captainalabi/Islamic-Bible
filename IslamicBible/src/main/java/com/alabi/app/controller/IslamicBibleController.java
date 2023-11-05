@@ -3,6 +3,7 @@ package com.alabi.app.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,8 +34,9 @@ public class IslamicBibleController {
 		this.versionService = versionService;
 	}
 	
-	@GetMapping("/")
-	public String indexPage() {
+	@GetMapping("/home")
+	public String indexPage(Model model, @Param("keyword") String keyword) {
+		model.addAttribute("listAllIslamicBible", islamicBibleService.findAll(keyword));
 		return "index";
 	}
 	
@@ -46,20 +48,14 @@ public class IslamicBibleController {
 		return "create-islamicBible";
 	}
 	
-	@GetMapping("/listAllIslamicBible")
-	public String listAllIslamicBible(Model model) {	
-		
-		model.addAttribute("testVar", "myVar");
-		
-		model.addAttribute("listAllIslamicBible", islamicBibleService.readIslamicBible());
-		return "listAllIslamicBible";
-	}
-	
+//	@GetMapping("/listAllIslamicBible")
+//	public String listAllIslamicBible(Model model, @Param("keyword") String keyword) {		
+//		model.addAttribute("listAllIslamicBible", islamicBibleService.findAll(keyword));
+//		return "redirect:/";
+//	}
+//	
 	@GetMapping("/test")
-	public String test(Model model) {	
-		
-		model.addAttribute("testVar", "myVar2");
-		
+	public String test(Model model) {			
 		model.addAttribute("listAllIslamicBible", islamicBibleService.readIslamicBible());
 		return "test";
 	}

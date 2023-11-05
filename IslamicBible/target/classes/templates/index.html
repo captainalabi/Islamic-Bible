@@ -9,11 +9,12 @@
 		crossorigin="anonymous">
 	</head>
 	<body>
+		<!--navigation bar-->
+		<div th:replace="~{navbar :: menunav}"></div>
 		<div class="container">
 			
 			<center><h1>Welcome To Islamic Bible Home</h1></center>
-			
-			
+						
 			<h1><a th:href="@{/show-create-islamicBibleForm}">Create New Entry</a></h1>
 			<h1><a th:href="@{/listAllIslamicBible}">All Entries</a></h1>
 			<h1><a th:href="@{/showBookForm}">Save New Bible Book</a></h1>
